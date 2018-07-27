@@ -1,6 +1,7 @@
 /node_modules
 /public/cms
 /public/hot
+/public/dist
 /public/storage
 /public/content/upgrade
 /storage/*.key
