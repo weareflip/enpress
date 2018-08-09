@@ -26,7 +26,7 @@
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "~4.0",
-        "enpress/framework": "dev-master",
+        "weareflip/enpress-framework": "^1.0",
         "johnpbloch/wordpress": "^4.7",
         "composer/installers": "^1.0",
         "wp-premium/advanced-custom-fields-pro": "1.0.0",
