@@ -17,6 +17,20 @@ $app = new Illuminate\Foundation\Application(
 
 /*
 |--------------------------------------------------------------------------
+| Load Balancer Fix
+|--------------------------------------------------------------------------
+|
+| If a load balancer is handling the HTTPS traffic and certificate, it
+| should add a HTTPS header that tells the underlying web server the
+| client used HTTPS to access the website.
+*/
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
+	$_SERVER['HTTPS'] = 'on';
+}
+
+/*
+|--------------------------------------------------------------------------
 | Bind Important Interfaces
 |--------------------------------------------------------------------------
 |
