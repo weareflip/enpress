@@ -3,7 +3,7 @@
 To set up a new Enpress project, run the follow commands:
 
 ```
-git clone --depth=1 https://github.com/enpress/enpress.git <project_name>
+git clone --depth=1 https://github.com/weareflip/enpress.git <project_name>
 cd <project_name>
 composer install
 mv .env.example .env
