@@ -14,13 +14,5 @@ services:
       - DB_PASSWORD=
       - DB_HOST=docker.for.mac.host.internal
       - APP_URL=http://mac.test:8088
-      - CACHE_DRIVER=redis
-      - REDIS_HOST=wp.redis
     ports:
       - "8088:80"
-  wp.redis:
-    image: redis
-    volumes:
-      - ./redis/data:/data
-    ports:
-      - "6379"

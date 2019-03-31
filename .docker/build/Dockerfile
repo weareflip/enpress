@@ -17,7 +17,7 @@ RUN composer dump-autoload --optimize --classmap-authoritative
 # Build frontend assets
 FROM node as frontend
 WORKDIR /app
-COPY package.json package-lock.json webpack.common.js webpack.prod.js postcss.config.js /app/
+COPY package.json package-lock.json webpack.config.js webpack.prod.js postcss.config.js /app/
 
 RUN npm install
 
