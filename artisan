@@ -13,6 +13,12 @@
 |
 */
 
+// If the wp:install command is run, indicate to Wordpress we're installing
+// to prevent redirects
+if (isset($argv[1]) && $argv[1] === 'wp:install') {
+    define('WP_INSTALLING', true);
+}
+
 require __DIR__. '/public/cms/wp-load.php';
 $app = app();
 
