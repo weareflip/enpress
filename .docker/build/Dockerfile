@@ -17,12 +17,12 @@ RUN composer dump-autoload --optimize --classmap-authoritative
 # Build frontend assets
 FROM node as frontend
 WORKDIR /app
-COPY package.json package-lock.json webpack.config.js webpack.prod.js postcss.config.js /app/
+COPY .babelrc package.json package-lock.json webpack.config.js postcss.config.js /app/
 
 RUN npm install
 
 COPY resources/assets /app/resources/assets
-RUN npm run build:dist
+RUN npm run build
 
 # Build app image
 FROM php:7.1-apache as app
