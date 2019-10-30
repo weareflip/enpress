@@ -31,6 +31,19 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARD
 
 /*
 |--------------------------------------------------------------------------
+| Wordpress non-HTTP request fix
+|--------------------------------------------------------------------------
+|
+| Commands through artisan do not set this server header and Wordpress
+| expects it to exist otherwise it crashes.
+*/
+if ($app->runningInConsole()) {
+    $_SERVER['SERVER_PROTOCOL'] = null;
+    $_SERVER['SERVER_NAME'] = 'localhost';
+}
+
+/*
+|--------------------------------------------------------------------------
 | Bind Important Interfaces
 |--------------------------------------------------------------------------
 |
